@@ -7,21 +7,40 @@ public class RigidBodyCharacterController : MonoBehaviour
 {
     [SerializeField] private float accelerationForce = 10.0f;
     [SerializeField] private float maxSpeed = 2;
+    [SerializeField] private PhysicMaterial stopPhysicsMaterial, movePhysicsMaterial;
 
     private new Rigidbody rigidbody;
     private Vector2 input;
+    private new Collider collider;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
     }
 
     private void FixedUpdate()
     {
         var inputDirection = new Vector3(input.x, 0, input.y);
+
+
+        // There is a shorcut syntax for this block of code - See below using the ternary or also called conditional operator.
+        //if (inputDirection.magnitude > 0)
+        //{
+        //    collider.material = movePhysicsMaterial;
+        //}
+        //else
+        //{
+        //    collider.material = stopPhysicsMaterial;
+        //}
+
+        collider.material = inputDirection.magnitude > 0 ? movePhysicsMaterial : stopPhysicsMaterial;
+
+
+
         if(rigidbody.velocity.magnitude < maxSpeed)
         {
-        rigidbody.AddForce(inputDirection * accelerationForce); // << Multiply by time.DetaTime not needed in FixedUpdate
+        rigidbody.AddForce(inputDirection * accelerationForce, ForceMode.Acceleration); // << Multiply by time.DetaTime not needed in FixedUpdate
         }
 
         /*rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);*/ // << Using this over rides the Unity phisics 
