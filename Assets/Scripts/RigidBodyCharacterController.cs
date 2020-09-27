@@ -35,6 +35,7 @@ public class RigidBodyCharacterController : MonoBehaviour
         //}
 
         collider.material = inputDirection.magnitude > 0 ? movePhysicsMaterial : stopPhysicsMaterial;
+        // The line of code above does the same as the comented if condition before.
 
 
 
