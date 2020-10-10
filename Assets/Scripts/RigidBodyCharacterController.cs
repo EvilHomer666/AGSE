@@ -24,7 +24,7 @@ public class RigidBodyCharacterController : MonoBehaviour
         var inputDirection = new Vector3(input.x, 0, input.y);
 
 
-        // There is a shorcut syntax for this block of code - See below using the ternary or also called conditional operator.
+        // There is a shorcut syntax for this block of code - See below using the TERNARY OPERATOR or also called conditional operator.
         //if (inputDirection.magnitude > 0)
         //{
         //    collider.material = movePhysicsMaterial;
@@ -35,7 +35,7 @@ public class RigidBodyCharacterController : MonoBehaviour
         //}
 
         collider.material = inputDirection.magnitude > 0 ? movePhysicsMaterial : stopPhysicsMaterial;
-        // The line of code above does the same as the comented if condition before.
+        // The line of code above does the same as the comented if condition before. Do not abuse this thought!
 
 
 
@@ -45,7 +45,7 @@ public class RigidBodyCharacterController : MonoBehaviour
         }
 
         /*rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);*/ // << Using this over rides the Unity phisics 
-        // simulation, ei. The character's gravity is affected by this!
+        // simulation, ie. The character's gravity is affected by this! Do not use.
     }
 
     private void Update()
