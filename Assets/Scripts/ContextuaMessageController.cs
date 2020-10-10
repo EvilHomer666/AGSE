@@ -27,5 +27,24 @@ public class ContextuaMessageController : MonoBehaviour
         canvasGroup.alpha = 0;
     }
 
+    // Create an event handler - thsi function decopples/encapsulates the two scripts, ContextuaMessageController and 
+    // ContextualMessageTrigger so they can communicate with each other without depending on each other through references. 
+    // Separation of concerns!.
+    private void OnContextualMessageTriggered()
+    {
+        StartCoroutine(ShowMessage("Testing", 2));
+    }
+
+    private void OnEnable()
+    {
+        // Subscrive - store event handler in the event
+        ContextualMessageTrigger.ContextualMessageTriggered += OnContextualMessageTriggered;
+    }
+
+    private void OnDisable()
+    {
+        // Unsubscribe - remove the event handler
+        ContextualMessageTrigger.ContextualMessageTriggered -= OnContextualMessageTriggered;
+    }
 
 }
