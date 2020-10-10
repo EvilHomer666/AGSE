@@ -30,9 +30,9 @@ public class ContextuaMessageController : MonoBehaviour
     // Create an event handler - thsi function decopples/encapsulates the two scripts, ContextuaMessageController and 
     // ContextualMessageTrigger so they can communicate with each other without depending on each other through references. 
     // Separation of concerns!.
-    private void OnContextualMessageTriggered()
+    private void OnContextualMessageTriggered(string message, float messageDuration)
     {
-        StartCoroutine(ShowMessage("Testing", 2));
+        StartCoroutine(ShowMessage(message, messageDuration));
     }
 
     private void OnEnable()
