@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class ContextualMessageTrigger : MonoBehaviour
 {
+    [TextArea(3, 5)] // << Creates a text box with parameters, in this case 3 lines minimum, a scroll bar shows after 5 lines.
     [SerializeField] private string message = "Default message";
+
     [SerializeField] private float messageDuration = 1.0f;
 
     public delegate void ContextualMessageTriggeredAction(); // Delegate - Can only store void methods with no parameters, this can be
