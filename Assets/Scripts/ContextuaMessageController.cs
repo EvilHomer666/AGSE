@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ContextuaMessageController : MonoBehaviour
 {
+    [SerializeField] float fadeOutDuration = 1;
+
     private CanvasGroup canvasGroup;
     private TMP_Text messegeText; // TextMesh Pro
 
@@ -24,6 +26,16 @@ public class ContextuaMessageController : MonoBehaviour
         messegeText.text = message;
         // Wait for duration
         yield return new WaitForSeconds(duration);
+
+        // start fading out
+        float fadeElapsedTime = 0;
+        float fadeStartTime = Time.time;
+        while (fadeElapsedTime < fadeOutDuration) // This loop only governs this coroutine, not the entire program
+        {
+            fadeElapsedTime = Time.time - fadeStartTime;
+            canvasGroup.alpha = 1 - fadeElapsedTime / fadeOutDuration;
+            yield return null; // Must exist or game will freeze
+        }
         canvasGroup.alpha = 0;
     }
 
@@ -32,6 +44,7 @@ public class ContextuaMessageController : MonoBehaviour
     // Separation of concerns!.
     private void OnContextualMessageTriggered(string message, float messageDuration)
     {
+        StopAllCoroutines(); // << Prevents stacking of coroutines so each has their own timer
         StartCoroutine(ShowMessage(message, messageDuration));
     }
 
