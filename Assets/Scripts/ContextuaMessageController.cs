@@ -15,7 +15,7 @@ public class ContextuaMessageController : MonoBehaviour
 
         canvasGroup.alpha = 0;
 
-        StartCoroutine (ShowMessage("Testing", 2));
+        //StartCoroutine (ShowMessage("Testing", 2));
     }
 
     private IEnumerator ShowMessage(string message, float duration) //Co-routine Providing parameters to avoid multiple instances of method
