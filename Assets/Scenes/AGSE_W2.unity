@@ -1618,6 +1618,8 @@ GameObject:
   - component: {fileID: 1570173412}
   - component: {fileID: 1570173414}
   - component: {fileID: 1570173413}
+  - component: {fileID: 1570173416}
+  - component: {fileID: 1570173415}
   m_Layer: 5
   m_Name: ContextualMessageText
   m_TagString: Untagged
@@ -1697,7 +1699,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1740,6 +1742,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570173411}
   m_CullTransparentMesh: 0
+--- !u!225 &1570173415
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570173411}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1570173416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570173411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b55f85c6c6809346bfa985221e2085f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1756662418
 Mesh:
   m_ObjectHideFlags: 0
