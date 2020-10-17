@@ -35,6 +35,12 @@ public class RigidBodyCharacterController : MonoBehaviour
         //    collider.material = stopPhysicsMaterial;
         //}
 
+        Vector3 cameraFlattenedForward = Camera.main.transform.forward;
+        cameraFlattenedForward.y = 0;
+        var cameraRotation = Quaternion.LookRotation(cameraFlattenedForward);
+
+        Vector3 cameraRelativeInputDirection = cameraRotation * inputDirection;
+
         collider.material = inputDirection.magnitude > 0 ? movePhysicsMaterial : stopPhysicsMaterial;
         // The line of code above does the same as the comented if condition before. Do not abuse this thought!
 
@@ -42,7 +48,7 @@ public class RigidBodyCharacterController : MonoBehaviour
 
         if(rigidbody.velocity.magnitude < maxSpeed)
         {
-        rigidbody.AddForce(inputDirection * accelerationForce, ForceMode.Acceleration); // << Multiply by time.DetaTime not needed in FixedUpdate
+        rigidbody.AddForce(cameraRelativeInputDirection * accelerationForce, ForceMode.Acceleration); // << Multiply by time.DetaTime not needed in FixedUpdate
         }
 
         /*rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);*/ // << Using this over rides the Unity phisics 
