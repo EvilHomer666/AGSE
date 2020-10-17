@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RigidBodyCharacterController : MonoBehaviour
 
@@ -48,10 +49,17 @@ public class RigidBodyCharacterController : MonoBehaviour
         // simulation, ie. The character's gravity is affected by this! Do not use.
     }
 
-    private void Update()
+    // Event handler for new input system input
+    public void OnMove(InputAction.CallbackContext context) // Set to public in order to use Invoke Unity Events and Inspectore interface
     {
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        input = context.ReadValue<Vector2>();
     }
+
+    // We can now delete the method below:
+    //private void Update()
+    //{
+    //    input.x = Input.GetAxisRaw("Horizontal");
+    //    input.y = Input.GetAxisRaw("Vertical");
+    //}
 }
 

@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 52193539}
   - component: {fileID: 52193545}
   m_Layer: 0
-  m_Name: MessageTrigger
+  m_Name: MessageTrigger Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -558,7 +558,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-14328
+  m_Name: pb_Mesh17350
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 538220093}
   - component: {fileID: 538220097}
   - component: {fileID: 538220092}
+  - component: {fileID: 538220098}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -845,6 +846,100 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &538220098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538220091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 139759719a68b6c4e8ca09127fc4671f,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 538220092}
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 13d546c5-99ed-4881-9413-0bd38f482278
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebbba8a6-3456-43bd-ab2e-5c20db2d696c
+    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 128f4f9b-9d9f-45ea-8b82-6657d35949d8
+    m_ActionName: Player/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d31eb22e-4e23-4c10-bfbd-77826677011e
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5b1e8399-6cc3-4cc1-a350-bbfab435b932
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 245928e0-73d3-4392-917b-6e58fb9df4c3
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 605da391-092d-4a7b-b4a1-b96b34505d45
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5f22705-dabe-41da-abf7-f503583ce772
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 860799c4-9a1f-4c26-b1f2-a4739b1b2512
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9dac31de-ec10-46b6-84ef-cd60c22b06d4
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6107de80-9fc0-446b-a14f-733222947de4
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3337c43b-45aa-4d4b-bf27-9a1cca8f7171
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2870ce1f-515b-4cdc-a451-5c1bf591cad7
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &603120395
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +1045,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-7936
+  m_Name: pb_Mesh17240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2431,6 +2526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b55f85c6c6809346bfa985221e2085f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOutDuration: 1
 --- !u!43 &1756662418
 Mesh:
   m_ObjectHideFlags: 0
@@ -2676,7 +2772,7 @@ GameObject:
   - component: {fileID: 1792360326}
   - component: {fileID: 1792360325}
   m_Layer: 0
-  m_Name: MessageTrigger (1)
+  m_Name: MessageTrigger Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
