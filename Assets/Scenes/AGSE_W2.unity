@@ -6083,12 +6083,37 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1833630655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7324b1c94271b8d48b2fbc34054d6050,
+    type: 3}
+  m_PrefabInstance: {fileID: 369508748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1833630656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7324b1c94271b8d48b2fbc34054d6050,
     type: 3}
   m_PrefabInstance: {fileID: 369508748}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1833630657
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833630655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77a6cfb12d132d841b30d84586abb1e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!43 &1908784167
 Mesh:
   m_ObjectHideFlags: 0
