@@ -14,12 +14,16 @@ public class RigidBodyCharacterController : MonoBehaviour
     private new Rigidbody rigidbody;
     private Vector2 input;
     private new Collider collider;
+    private readonly int movementInputAnimParam = Animator.StringToHash("movementInput");
+    private Animator animator;
+
     private float turnSpeed = 0.1f;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         collider = GetComponent<Collider>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -89,13 +93,7 @@ public class RigidBodyCharacterController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context) // Set to public in order to use Invoke Unity Events and Inspectore interface
     {
         input = context.ReadValue<Vector2>();
+        animator.SetFloat(movementInputAnimParam, input.magnitude);
     }
-
-    // We can now delete the method below:
-    //private void Update()
-    //{
-    //    input.x = Input.GetAxisRaw("Horizontal");
-    //    input.y = Input.GetAxisRaw("Vertical");
-    //}
 }
 
